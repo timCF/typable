@@ -1,11 +1,15 @@
 # Typable
 
-**TODO: Add description**
+Protocol which describes type identifier of Elixir term
+
+[![Hex](https://raw.githubusercontent.com/tim2CF/static-asserts/master/build-passing.svg?sanitize=true)](https://hex.pm/packages/typable/)
+[![Documentation](https://raw.githubusercontent.com/tim2CF/static-asserts/master/documentation-passing.svg?sanitize=true)](https://hexdocs.pm/typable/)
+
+<img src="priv/img/logo.png" width="300"/>
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `typable` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `typable` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +19,13 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/typable](https://hexdocs.pm/typable).
+## Examples
 
+```elixir
+iex> Typable.type_of(1)
+Integer
+iex> Typable.type_of(self())
+PID
+iex> Typable.type_of(%URI{})
+URI
+```

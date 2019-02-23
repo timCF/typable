@@ -7,7 +7,7 @@ defprotocol Typable do
   @type t :: Typable.t()
 
   @doc """
-  Returns module which represents type of given term
+  Returns module which represents type identifier of given term
 
   ## Examples
 
