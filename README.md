@@ -14,7 +14,7 @@ The package can be installed by adding `typable` to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:typable, "~> 0.1.0"}
+    {:typable, "~> 0.2.0"}
   ]
 end
 ```
@@ -22,10 +22,29 @@ end
 ## Examples
 
 ```elixir
-iex> Typable.type_of(1)
+iex> require Type
+Type
+
+iex> Type.type_of(1)
 Integer
-iex> Typable.type_of(self())
+iex> Type.type_of(self())
 PID
-iex> Typable.type_of(%URI{})
+iex> Type.type_of(%URI{})
 URI
+
+iex> Type.instance_of(Integer)
+0
+iex> Type.instance_of(PID)
+#PID<0.0.0>
+iex> Type.instance_of(URI)
+%URI{
+  authority: nil,
+  fragment: nil,
+  host: nil,
+  path: nil,
+  port: nil,
+  query: nil,
+  scheme: nil,
+  userinfo: nil
+}
 ```
