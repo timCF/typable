@@ -57,6 +57,45 @@ defmodule Type do
   defdelegate type_of(x), to: Typable
 
   @doc """
+  Checks if the given type exist.
+  Returns :ok if so, otherwise raises exception.
+
+  ## Examples
+
+  ```
+  iex> Type.assert_exist!(Integer)
+  :ok
+  iex> Type.assert_exist!(URI)
+  :ok
+  iex> Type.assert_exist!(TypeNotExist)
+  ** (UndefinedFunctionError) function TypeNotExist.__struct__/0 is undefined (module TypeNotExist is not available)
+  ```
+  """
+  [
+    # scalars
+    Atom,
+    BitString,
+    Float,
+    Function,
+    Integer,
+    PID,
+    Port,
+    Reference,
+    # collections
+    Tuple,
+    List,
+    Map
+  ]
+  |> Enum.each(fn type ->
+    def assert_exist!(unquote(type)), do: :ok
+  end)
+
+  def assert_exist!(type) do
+    %_{} = type.__struct__()
+    :ok
+  end
+
+  @doc """
   Returns term which is instance of given type.
   Have compile-time guarantees.
 

@@ -14,7 +14,7 @@ The package can be installed by adding `typable` to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:typable, "~> 0.2.0"}
+    {:typable, "~> 0.3.0"}
   ]
 end
 ```
