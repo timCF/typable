@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.2.0](https://github.com/timCF/typable/tree/v0.2.0) (2019-07-09)
+[Full Changelog](https://github.com/timCF/typable/compare/v0.1.1...v0.2.0)
+
 ## [v0.1.1](https://github.com/timCF/typable/tree/v0.1.1) (2019-02-23)
 
 
