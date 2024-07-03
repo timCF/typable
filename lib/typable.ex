@@ -138,19 +138,19 @@ defmodule Type do
 
   defp mk_instance(PID) do
     quote location: :keep do
-      :erlang.list_to_pid('<0.0.0>')
+      :erlang.list_to_pid(~C"<0.0.0>")
     end
   end
 
   defp mk_instance(Port) do
     quote location: :keep do
-      :erlang.list_to_port('#Port<0.0>')
+      :erlang.list_to_port(~C"#Port<0.0>")
     end
   end
 
   defp mk_instance(Reference) do
     quote location: :keep do
-      :erlang.list_to_ref('#Ref<0.0.0.0>')
+      :erlang.list_to_ref(~C"#Ref<0.0.0.0>")
     end
   end
 
